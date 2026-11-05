@@ -1,0 +1,178 @@
+{
+  "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+  "scope": [
+    "C8200",
+    "C8300",
+    "C8500",
+    "C8000V"
+  ],
+  "latest_release": "26.2.1",
+  "recommended_releases": [
+    "17.12.8",
+    "17.15.6"
+  ],
+  "documents": [
+    {
+      "file": "C8000V-IOS-XE-26.2.x-release-notes.html",
+      "url": "https://www.cisco.com/c/en/us/td/docs/routers/C8000V/Release-Notes/c8000v-releasenotes-26-2-x.html",
+      "title": "Release Notes for Cisco Catalyst 8000V Edge Software, Release 26.2.x - Cisco",
+      "html_updated": "September 27, 2026",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 136632,
+      "sha256": "7821b71b6d41e5d19896f655a02cc9b0147a1f670be77c57ae5f9b7209b84956"
+    },
+    {
+      "file": "C8000V-IOS-XE-26.2.x-release-notes.pdf",
+      "url": "https://www.cisco.com/c/en/us/td/docs/routers/C8000V/Release-Notes/c8000v-releasenotes-26-2-x.pdf",
+      "title": "Release Notes for Cisco Catalyst 8000V Edge Software, Release 26.2.x",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 324016,
+      "sha256": "d4366866b0917bdb2cb76764d003d4b7735a4b4f1c590b3c88947b3244ef9ddb"
+    },
+    {
+      "file": "C8000V-datasheet.html",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8000v-edge-software/catalyst-8000v-edge-software-ds.html",
+      "title": "Cisco Catalyst 8000V Edge Software Data Sheet - Cisco",
+      "html_updated": "August 22, 2025",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 261416,
+      "sha256": "35881d5c83d9c2641946a73d86c68818db9074775a4c82a65b443b08a7bf17cd"
+    },
+    {
+      "file": "C8000V-datasheet.pdf",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8000v-edge-software/catalyst-8000v-edge-software-ds.pdf",
+      "title": "Cisco Catalyst 8000V Edge Software Data Sheet",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 552154,
+      "sha256": "35ae9f89ac2f759eca53f33f1ffdc9f82440cd2e1c587d2282623cf53a4a32ec"
+    },
+    {
+      "file": "C8000V-ordering-guide.html",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8000v-edge-software/nb-06-cat8000v-edge-sw-og-cte-en.html",
+      "title": "Cisco Catalyst 8000V Edge Software Ordering Guide - Cisco",
+      "html_updated": "August 6, 2024",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 115317,
+      "sha256": "e6387146c7a0352723eae4337e3bbc325a95635616896ec9efb017ab1107154b"
+    },
+    {
+      "file": "C8000V-ordering-guide.pdf",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8000v-edge-software/nb-06-cat8000v-edge-sw-og-cte-en.pdf",
+      "title": "Cisco Catalyst 8000V Edge Software Ordering Guide",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 2336950,
+      "sha256": "253957aae4dd30f639362ce1a5c5cff9d0dc8ccfb233a3489b570119450746d2"
+    },
+    {
+      "file": "C8200-C8300-IOS-XE-26.2.x-release-notes.html",
+      "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8300/rel_notes/26-x/release-notes-catalyst-8200-and-catalyst-8300-series-edge-platforms-release-26-2-x.html",
+      "title": "Release Notes for Cisco Catalyst 8200 and Catalyst 8300 Series Edge Platforms, Release 26.2.x - Cisco",
+      "html_updated": "September 27, 2026",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 148993,
+      "sha256": "213e64c3f159e1554516755306dec46f03196c840212997aaae61d66a93dd220"
+    },
+    {
+      "file": "C8200-C8300-IOS-XE-26.2.x-release-notes.pdf",
+      "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8300/rel_notes/26-x/release-notes-catalyst-8200-and-catalyst-8300-series-edge-platforms-release-26-2-x.pdf",
+      "title": "Release Notes for Cisco Catalyst 8200 and Catalyst 8300 Series Edge Platforms, Release 26.2.x",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 358984,
+      "sha256": "593e47001395ea667a29a26fb89594eb34aeafb558a402bb6fce08657e5b2cc7"
+    },
+    {
+      "file": "C8200-datasheet.html",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8200-series-edge-platforms/nb-06-cat8200-series-edge-plat-ds-cte-en.html",
+      "title": "Cisco Catalyst 8200 Series Edge Platforms Data Sheet - Cisco",
+      "html_updated": "October 6, 2026",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 269343,
+      "sha256": "fa2e6b170cc271d4efe1b168d299f744330191f2a4f15208be1012fc4a0e9bdb"
+    },
+    {
+      "file": "C8200-datasheet.pdf",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8200-series-edge-platforms/nb-06-cat8200-series-edge-plat-ds-cte-en.pdf",
+      "title": "Cisco Catalyst 8200 Series Edge Platforms Data Sheet",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 527654,
+      "sha256": "35f1e32c3007c51ad243ab1e6a0007cbf0f356cddc580b0289e8579a7d8ae4fc"
+    },
+    {
+      "file": "C8300-datasheet.html",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8300-series-edge-platforms/datasheet-c78-744088.html",
+      "title": "Cisco Catalyst 8300 Series Edge Platforms Data Sheet - Cisco",
+      "html_updated": "October 6, 2026",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 329414,
+      "sha256": "b95a5b43fe9c76241add3410c71af4626e08d9b14d9955b2dd29200beb4f412d"
+    },
+    {
+      "file": "C8300-datasheet.pdf",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8300-series-edge-platforms/datasheet-c78-744088.pdf",
+      "title": "Cisco Catalyst 8300 Series Edge Platforms Data Sheet",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 814697,
+      "sha256": "080c1fb4ec06d188943ff5d5aea4f24a408fae4f614e9ba08c48a2567865c669"
+    },
+    {
+      "file": "C8500-IOS-XE-26.2.x-release-notes.html",
+      "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8500/release-notes/releasenotes-c8500-edge-26-2-x.html",
+      "title": "Release Notes for Cisco Catalyst 8500 Series Edge Platforms, Release 26.2.x - Cisco",
+      "html_updated": "September 27, 2026",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 155494,
+      "sha256": "06a14fb76124ad6eca4f4a959855784194c87899ea0bb24bf970627da6a2de96"
+    },
+    {
+      "file": "C8500-IOS-XE-26.2.x-release-notes.pdf",
+      "url": "https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8500/release-notes/releasenotes-c8500-edge-26-2-x.pdf",
+      "title": "Release Notes for Cisco Catalyst 8500 Series Edge Platforms, Release 26.2.x",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 374590,
+      "sha256": "defdfd01e45fc889d3937c98769a53f2144443cd1d2edfa7193b8a8682c5f696"
+    },
+    {
+      "file": "C8500-datasheet.html",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8500-series-edge-platforms/datasheet-c78-744089.html",
+      "title": "Cisco Catalyst 8500 Series Edge Platforms Data Sheet - Cisco",
+      "html_updated": "October 9, 2026",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 338606,
+      "sha256": "3e3a6570793742ab3af39df7b40530230ca5ad407f90644506fa95f55bb99cfd"
+    },
+    {
+      "file": "C8500-datasheet.pdf",
+      "url": "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8500-series-edge-platforms/datasheet-c78-744089.pdf",
+      "title": "Cisco Catalyst 8500 Series Edge Platforms Data Sheet",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 1035780,
+      "sha256": "2e5a33b9115169ea79e58b4fc1fd11fd8198081cc7a84f104fb18af499889952"
+    },
+    {
+      "file": "IOS-XE-26-release-index.html",
+      "url": "https://www.cisco.com/c/en/us/support/ios-nx-os-software/ios-xe-26/series.html",
+      "title": "Cisco IOS XE 26 - Support - Cisco",
+      "html_updated": null,
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 90514,
+      "sha256": "51d473a6116dbdb1177a58350e24f7f8298125efc839423e8827a95252754400"
+    },
+    {
+      "file": "IOS-XE-recommended-releases.html",
+      "url": "https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-xe-16/215567-recommended-releases-for-asr1000-isr400.html",
+      "title": "Choose Stable Cisco IOS\u00ae XE Release for Enterprise Routing Platforms - Cisco",
+      "html_updated": "June 15, 2026",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 59869,
+      "sha256": "3cc828d323de244270506befd712a0165bd25bfc1ba9d326899c1b677a8ad5f6"
+    },
+    {
+      "file": "IOS-XE-recommended-releases.pdf",
+      "url": "https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-xe-16/215567-recommended-releases-for-asr1000-isr400.pdf",
+      "title": "Choose Stable Cisco IOS\u00ae XE Release for Enterprise Routing Platforms",
+      "retrieved_utc": "2026-11-05T18:16:10.250721+00:00",
+      "bytes": 28355,
+      "sha256": "937af451e4ee96099dca3008eff56d04430cfafe80c72596f39057db6d4cec35"
+    }
+  ]
+}

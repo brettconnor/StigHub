@@ -1,0 +1,12 @@
+family,pid,pid_type,minimum_ios_xe,source_file
+C8200,C8200-1N-4T,hardware_platform,17.4.1,C8200-datasheet.html
+C8200L,C8200L-1N-4T,hardware_platform,17.5.1,C8200-datasheet.html
+C8300,C8300-2N2S-4T2X,hardware_platform,17.3.2,C8300-datasheet.html
+C8300,C8300-1N1S-4T2X,hardware_platform,17.3.2,C8300-datasheet.html
+C8300,C8300-2N2S-6T,hardware_platform,17.3.2,C8300-datasheet.html
+C8300,C8300-1N1S-6T,hardware_platform,17.3.2,C8300-datasheet.html
+C8500,C8500-20X6C,hardware_platform,17.10.1,C8500-datasheet.html
+C8500,C8500-12X4QC,hardware_platform,17.3.2,C8500-datasheet.html
+C8500,C8500-12X,hardware_platform,17.3.2,C8500-datasheet.html
+C8500L,C8500L-8S4X,hardware_platform,17.4.1a,C8500-datasheet.html
+C8000V,L-DNA-C8000V,subscription_ordering,,C8000V-ordering-guide.html

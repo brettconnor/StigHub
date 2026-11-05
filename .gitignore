@@ -7,6 +7,9 @@ __pycache__/
 /zips/
 /srgs/
 
+# Local Word documents
+/docx/
+
 # Generated product-specific templates
 /VPN/Cisco-*/
 !/VPN/Cisco-IOS-XE/
