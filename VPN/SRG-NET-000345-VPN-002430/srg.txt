@@ -1,0 +1,24 @@
+
+SRG-NET-000345-VPN-002430
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must implement a local cache of revocation data to support path discovery and validation in case of the inability to access revocation information via the network.
+
+SRG VulDiscussion:
+Without configuring a local cache of revocation data, there is the potential to allow access to users who are no longer authorized (users with revoked certificates). 
+
+This requirement only applies to components where this is specific to the function of the device or has the concept of a user (e.g., VPN or proxy capability). This does not apply to authentication for the purpose of configuring the device itself (i.e., device management).
+
+SRG Check:
+If the VPN does not provide PKI-based user authentication intermediary services, this is not applicable.
+
+Verify the VPN implements a local cache of revocation data to support path discovery and validation in case of the inability to access revocation information via the network.
+
+If the VPN does not implement a local cache of revocation data to support path discovery and validation in case of the inability to access revocation information via the network, this is a finding.
+
+SRG Fix:
+If PKI-based user authentication intermediary services are provided, configure the VPN to implement a local cache of revocation data to support path discovery and validation in case of the inability to access revocation information via the network.
+

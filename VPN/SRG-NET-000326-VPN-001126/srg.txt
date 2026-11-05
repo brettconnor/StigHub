@@ -1,0 +1,24 @@
+
+SRG-NET-000326-VPN-001126
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must uniquely identify and authenticate destination by organization, system, application, and/or individual for information transfer.
+
+SRG VulDiscussion:
+Attribution is a critical component of a security concept of operations. The ability to identify source and destination points for information flowing in information systems, allows the forensic reconstruction of events when required, and encourages policy compliance by attributing policy violations to specific organizations/individuals. Successful domain authentication requires that information system labels distinguish among systems, organizations, and individuals involved in preparing, sending, receiving, or disseminating information.
+
+This requirement applies to VPN Gateways that transfer information between different security domains (e.g., cross-domain solutions).
+
+This requirement also applies to Zero Trust initiatives.
+
+SRG Check:
+Determine if the VPN Gateway uniquely identifies and authenticates destination by organization, system, application, and/or individual for information transfer.   
+
+If the VPN Gateway does not uniquely identify and authenticate destination by organization, system, application, and/or individual for information transfer, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to uniquely identify and authenticate destination by organization, system, application, and/or individual for information transfer.
+

@@ -1,0 +1,20 @@
+
+SRG-NET-000166-VPN-000580
+
+Severity:
+medium
+
+SRG Requirement:
+The Remote Access VPN Gateway must use a separate authentication server (e.g., LDAP, RADIUS, TACACS+) to perform user authentication.
+
+SRG VulDiscussion:
+The VPN interacts directly with public networks and devices and should not contain user authentication information for all users. AAA network security services provide the primary framework through which a network administrator can set up access control and authorization on network points of entry or network access servers. It is not advisable to configure access control on the VPN gateway or remote access server. Separation of services provides added assurance to the network if the access control server is compromised.
+
+SRG Check:
+Verify the Remote Access VPN Gateway is configured to use a physically separate authentication server (e.g., LDAP, RADIUS, TACACS+) to perform user authentication.
+
+If the Remote Access VPN Gateway does not use a separate authentication server (e.g., LDAP, RADIUS, TACACS+) to perform user authentication, this is a finding.
+
+SRG Fix:
+Configure the Remote Access VPN Gateway to use a separate authentication server (e.g., LDAP, RADIUS, TACACS+) to perform user authentication.
+

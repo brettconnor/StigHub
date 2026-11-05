@@ -1,0 +1,20 @@
+
+SRG-NET-000341-VPN-001350
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must accept the Common Access Card (CAC) credential.
+
+SRG VulDiscussion:
+The use of Personal Identity Verification (PIV)  credentials facilitates standardization and reduces the risk of unauthorized access. DoD has mandated the use of the CAC as the PIV credential to support identity management and personal authentication for systems covered under HSPD 12, as well as a primary component of layered protection for national security systems.
+
+SRG Check:
+Verify the VPN Gateway accepts PIV  credentials.
+
+If the VPN Gateway does not accept the CAC credential, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to accept the CAC credential.
+

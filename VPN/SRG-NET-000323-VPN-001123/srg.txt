@@ -1,0 +1,24 @@
+
+SRG-NET-000323-VPN-001123
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must use organization-defined security attributes associated with organization-defined information, source, and destination objects to enforce organization-defined information flow control policies as a basis for flow control decisions.
+
+SRG VulDiscussion:
+A mechanism to detect and prevent unauthorized communication flow must be configured or provided as part of the system design. If information flow is not enforced based on approved authorizations, the system may become compromised. Information flow control regulates where information is allowed to travel within a system and between interconnected systems. Security attributes may be used to manage information flow control. 
+
+Information flow enforcement mechanisms compare security attributes associated with information (data content and data structure) and source/destination objects, and respond appropriately (e.g., block, quarantine, alert administrator) when the mechanisms encounter information flows not allowed by information flow policies. For example, an information object labeled Secret would be allowed to flow to a destination object labeled Secret, but an information object labeled Top Secret would not be allowed to flow to a destination object labeled Secret. Security attributes can also include, for example, source and destination addresses employed in traffic filter firewalls. Flow enforcement using security attributes can be used, for example, to control the release of certain types of information.
+
+This requirement also applies to Zero Trust initiatives.
+
+SRG Check:
+Determine if the VPN Gateway uses organization-defined security attributes associated with organization-defined information, source, and destination objects to enforce organization-defined information flow control policies as a basis for flow control decisions.   
+
+If the VPN Gateway does not use organization-defined security attributes associated with organization-defined information, source, and destination objects to enforce organization-defined information flow control policies as a basis for flow control decisions, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to use organization-defined security attributes associated with organization-defined information, source, and destination objects to enforce organization-defined information flow control policies as a basis for flow control decisions.
+

@@ -1,0 +1,3 @@
+Using older unauthorized versions or incorrectly configuring protocol negotiation makes the gateway vulnerable to known and unknown attacks that exploit vulnerabilities in this protocol.
+
+NIST SP 800-52 Rev2 provides guidance for client negotiation on either DoD-only or public-facing servers.

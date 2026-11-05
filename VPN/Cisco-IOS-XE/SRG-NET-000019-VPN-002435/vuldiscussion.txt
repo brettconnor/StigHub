@@ -1,0 +1,3 @@
+Limiting authenticated client sessions to the initial session source IP for TLS VPNs is a safeguard against session hijacking, replay, and man-in-the-middle attacks, maintaining integrity and confidentiality of communication between clients and servers.
+
+This requirement also applies to Zero Trust initiatives.

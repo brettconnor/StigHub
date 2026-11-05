@@ -1,0 +1,4 @@
+show running-config | section ^ip access-list extended WAN-VPN-IN$
+show running-config | section ^ipv6 access-list WAN-VPN6-IN$
+show running-config interface <WAN-INT>
+show running-config interface Vlan<VLAN>

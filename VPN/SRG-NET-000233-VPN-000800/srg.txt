@@ -1,0 +1,26 @@
+
+SRG-NET-000233-VPN-000800
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must recognize only system-generated session identifiers.
+
+SRG VulDiscussion:
+VPN gateways (depending on function) utilize sessions and session identifiers to control application behavior and user access. If an attacker can guess the session identifier, or can inject or manually insert session information, the valid user's application session can be compromised.
+
+Unique session IDs address man-in-the-middle attacks, including session hijacking or insertion of false information into a session. If the attacker is unable to identify or guess the session information related to pending application traffic, they will have more difficulty in hijacking the session or otherwise manipulating valid sessions.
+
+This requirement focuses on communications protection for the application session rather than for the network packet.
+
+This requirement applies to any VPN gateway that is an intermediary of individual sessions (e.g., proxy, ALG, TLS VPN). VPN gateways that perform these functions must be able to identify which session identifiers were generated when the sessions were established.
+
+SRG Check:
+Verify the VPN Gateway recognizes only system-generated session identifiers.
+
+If the VPN Gateway does not recognize only system-generated session identifiers, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to recognize only system-generated session identifiers.
+

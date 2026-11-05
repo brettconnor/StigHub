@@ -1,0 +1,20 @@
+
+SRG-NET-000132-VPN-000470
+
+Severity:
+medium
+
+SRG Requirement:
+The Remote Access VPN Gateway must be configured to prohibit Point-to-Point Tunneling Protocol (PPTP) and L2F.
+
+SRG VulDiscussion:
+The PPTP and L2F are obsolete method for implementing virtual private networks. Both protocols may be easy to use and readily available, but they have many well-known security issues and exploits. Encryption and authentication are both weak.
+
+SRG Check:
+Verify the VPN Gateway is configured to prohibit PPTP and L2F.
+
+If the VPN Gateway does not be configured to prohibit PPTP and L2F, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to prohibit PPTP and L2F.
+

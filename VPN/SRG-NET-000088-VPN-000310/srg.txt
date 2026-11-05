@@ -1,0 +1,24 @@
+
+SRG-NET-000088-VPN-000310
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must generate log records containing information to establish where the events occurred.
+
+SRG VulDiscussion:
+Without establishing where events occurred, it is impossible to establish, correlate, and investigate the events leading up to an outage or attack.
+
+In order to compile an accurate risk assessment, and provide forensic analysis, it is essential for security personnel to know where events occurred, such as VPN gateway components, modules, device identifiers, node names, and functionality.
+
+Associating information about where the event occurred within the network provides a means of investigating an attack, recognizing resource utilization or capacity thresholds, or identifying an improperly configured VPN gateway.
+
+SRG Check:
+Verify the VPN Gateway generates  log records containing information to establish where the events occurred.
+
+If the VPN Gateway does not generate log records containing information to establish where the events occurred, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to generates log records containing information to establish where the events occurred.
+

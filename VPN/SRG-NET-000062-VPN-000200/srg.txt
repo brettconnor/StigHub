@@ -1,0 +1,22 @@
+
+SRG-NET-000062-VPN-000200
+
+Severity:
+high
+
+SRG Requirement:
+The TLS VPN Gateway must use TLS 1.2, at a minimum, to protect the confidentiality of sensitive data during transmission for remote access connections.
+
+SRG VulDiscussion:
+Using older unauthorized versions or incorrectly configuring protocol negotiation makes the gateway vulnerable to known and unknown attacks that exploit vulnerabilities in this protocol.
+
+NIST SP 800-52 Rev2 provides guidance for client negotiation on either DoD-only or public-facing servers.
+
+SRG Check:
+Verify the TLS VPN Gateway is configured to use  TLS 1.2 or higher to protect the confidentiality of sensitive data during transmission.
+
+If the TLS VPN Gateway does not use TLS 1.2, at a minimum, to protect the confidentiality of sensitive data during transmission, this is a finding.
+
+SRG Fix:
+Configure the TLS VPN Gateway to use TLS 1.2, at a minimum, to protect the confidentiality of sensitive data for transmission.
+

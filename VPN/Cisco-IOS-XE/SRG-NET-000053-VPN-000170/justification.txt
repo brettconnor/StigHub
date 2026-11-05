@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router provides site-to-site IPsec connectivity between routers. Under the established assessment scope, this requirement concerns remote-access VPN user sessions and is therefore not applicable to the assessed deployment.

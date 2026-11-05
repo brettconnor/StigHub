@@ -1,0 +1,24 @@
+
+SRG-NET-000372-VPN-001660
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must implement cryptographic mechanisms to prevent unauthorized disclosure of information and/or detect changes to information during transmission.
+
+SRG VulDiscussion:
+Encrypting information for transmission protects information from unauthorized disclosure and modification. Cryptographic mechanisms implemented to protect information integrity include, for example, cryptographic hash functions which have common application in digital signatures, checksums, and message authentication codes. 
+
+Use of this requirement will be limited to situations where the data owner has a strict requirement for ensuring data integrity and confidentiality is maintained at every step of the data transfer and handling process. When transmitting data, VPN Gateways need to leverage transmission protection mechanisms, such as TLS, TLS VPNs, or IPSEC.
+
+This requirement also applies to Zero Trust initiatives.
+
+SRG Check:
+Determine if the VPN Gateway implements cryptographic mechanisms to prevent unauthorized disclosure of information and/or detect changes to information during transmission.
+
+If the VPN Gateway does not implement cryptographic mechanisms to prevent unauthorized disclosure of information and/or detect changes to information during transmission, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to implement cryptographic mechanisms to prevent unauthorized disclosure of information and/or detect changes to information during transmission.
+

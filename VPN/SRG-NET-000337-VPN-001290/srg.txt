@@ -1,0 +1,18 @@
+
+SRG-NET-000337-VPN-001290
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must renegotiate the IPsec security association (SA) after eight hours or less.
+
+SRG VulDiscussion:
+The IPsec SA and its corresponding key will expire either after the number of seconds or amount of traffic volume has exceeded the configured limit. A new SA is negotiated before the lifetime threshold of the existing SA is reached to ensure that a new SA is ready for use when the old one expires. The longer the lifetime of the IPsec SA, the longer the lifetime of the session key used to protect IP traffic. The SA is less secure with a longer lifetime because an attacker has a greater opportunity to collect traffic encrypted by the same key and subject it to cryptanalysis. However, a shorter lifetime causes IPsec peers to renegotiate Phase II more often, resulting in the expenditure of additional resources.
+
+SRG Check:
+Verify the VPN Gateway renegotiates the IPsec security association after eight hours or less.
+
+SRG Fix:
+Configure the VPN Gateway to renegotiate the IPsec security association after eight hours or less.
+

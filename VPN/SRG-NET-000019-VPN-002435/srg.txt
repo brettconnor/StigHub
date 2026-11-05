@@ -1,0 +1,22 @@
+
+SRG-NET-000019-VPN-002435
+
+Severity:
+medium
+
+SRG Requirement:
+The TLS VPN must be configured to limit authenticated client sessions to initial session source IP.
+
+SRG VulDiscussion:
+Limiting authenticated client sessions to the initial session source IP for TLS VPNs is a safeguard against session hijacking, replay, and man-in-the-middle attacks, maintaining integrity and confidentiality of communication between clients and servers.
+
+This requirement also applies to Zero Trust initiatives.
+
+SRG Check:
+Verify the TLS VPN Gateway limits authenticated client sessions to initial session source IP.
+
+If the TLS VPN Gateway does not limit authenticated client sessions to initial session source IP, this is a finding.
+
+SRG Fix:
+Configure the TLS VPN Gateway to limit authenticated client sessions to initial session source IP.
+

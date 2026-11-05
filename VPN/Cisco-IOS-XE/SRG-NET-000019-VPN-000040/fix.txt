@@ -1,0 +1,56 @@
+crypto ikev2 proposal IKE2-PROP
+ encryption aes-gcm-256
+ prf sha256
+ group 19
+!
+crypto ikev2 policy IKE2-POLICY
+ proposal IKE2-PROP
+!
+crypto ikev2 keyring IKE2-KEYRING
+ peer <IPSEC-PEER-NAME>
+  address <IPSEC-PEER-IP>
+  pre-shared-key local <IPSEC-LOCAL-PSK>
+  pre-shared-key remote <IPSEC-PEER-PSK>
+ peer <IPSEC-IP6-PEER-NAME>
+  address <IPSEC-PEER-IP6>/<IP6-PREFIX>
+  pre-shared-key local <IPSEC-LOCAL-PSK6>
+  pre-shared-key remote <IPSEC-PEER-PSK6>
+!
+crypto ikev2 profile IKE2-PROFILE
+ match identity remote address <IPSEC-PEER-IP> <IPSEC-PEER-MASK>
+ authentication remote pre-share
+ authentication local pre-share
+ keyring local IKE2-KEYRING
+!
+crypto ikev2 profile IKE2-PROFILE6
+ match identity remote address <IPSEC-PEER-IP6>/<IP6-PREFIX>
+ authentication remote pre-share
+ authentication local pre-share
+ keyring local IKE2-KEYRING
+!
+crypto ipsec transform-set TSET_Tunnel esp-gcm 256
+ mode tunnel
+!
+crypto ipsec profile TNL_Profile
+ set transform-set TSET_Tunnel
+ set ikev2-profile IKE2-PROFILE
+!
+crypto ipsec profile TNL_Profile6
+ set transform-set TSET_Tunnel
+ set ikev2-profile IKE2-PROFILE6
+!
+interface Tunnel <TUN-INT>
+ ip address <TUN-IP> <TUN-MASK>
+ tunnel source <WAN-IP>
+ tunnel mode ipsec ipv4
+ tunnel destination <IPSEC-PEER-IP>
+ tunnel protection ipsec profile TNL_Profile
+!
+interface Tunnel <TUN-INT6>
+ no ip address
+ ipv6 address <TUN-IP6>/<TUN-PREFIX>
+ tunnel source <WAN-IP6>
+ tunnel mode ipsec ipv6
+ tunnel destination <IPSEC-PEER-IP6>
+ tunnel protection ipsec profile TNL_Profile6
+!

@@ -1,0 +1,22 @@
+
+SRG-NET-000715-VPN-000120
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must implement physically or logically separate subnetworks to isolate organization-defined critical system components and functions.
+
+SRG VulDiscussion:
+Separating critical system components and functions from other noncritical system components and functions through separate subnetworks may be necessary to reduce susceptibility to a catastrophic or debilitating breach or compromise that results in system failure. For example, physically separating the command and control function from the in-flight entertainment function through separate subnetworks in a commercial aircraft provides an increased level of assurance in the trustworthiness of critical system functions.
+
+This requirement also applies to Zero Trust initiatives.
+
+SRG Check:
+Verify the VPN Gateway is configured to implement physically or logically separate subnetworks to isolate organization-defined critical system components and functions.
+
+If the VPN Gateway is not configured to implement physically or logically separate subnetworks to isolate organization-defined critical system components and functions, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to implement physically or logically separate subnetworks to isolate organization-defined critical system components and functions.
+

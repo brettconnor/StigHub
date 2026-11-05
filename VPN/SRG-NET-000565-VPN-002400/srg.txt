@@ -1,0 +1,24 @@
+
+SRG-NET-000565-VPN-002400
+
+Severity:
+high
+
+SRG Requirement:
+The VPN gateway must use cryptographic algorithms approved by NSA to protect NSS when transporting classified traffic across an unclassified network.
+
+SRG VulDiscussion:
+Use of weak or untested encryption algorithms undermines the purposes of utilizing encryption to protect data. The VPN gateway must implement cryptographic modules adhering to the higher standards approved by the federal government since this provides assurance they have been tested and validated.
+
+NIST cryptographic algorithms approved by NSA to protect NSS. Based on an analysis of the impact of quantum computing, cryptographic algorithms specified by CNSSP-15 and approved for use in products in the Commercial Solution for Classified (CSfC) program, the approved algorithms have been changed to more stringent protocols configure with increased bit sizes and other secure characteristics to protect against quantum computing threats. The Commercial National Security Algorithm Suite (CNSA Suite) replaces Suite B.
+
+This requirement also applies to Zero Trust initiatives.
+
+SRG Check:
+Verify the VPN gateway Internet Key Exchange (IKE) Phase 1 and Phase 2 are configured to use cryptography compliant with NSA/CSS parameters when transporting classified traffic across an unclassified network.
+
+If the VPN gateway is not configured to use cryptography compliant with NSA/CSS parameters when transporting classified traffic across an unclassified network, this is a finding.
+
+SRG Fix:
+Configure the IPsec VPN Gateway IKE to use cryptography compliant with NSA/CSS parameters when transporting classified traffic across an unclassified network.
+

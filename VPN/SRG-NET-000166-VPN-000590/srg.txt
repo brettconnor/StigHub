@@ -1,0 +1,22 @@
+
+SRG-NET-000166-VPN-000590
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must map the authenticated identity to the user account for PKI-based authentication.
+
+SRG VulDiscussion:
+Without mapping the certificate used to authenticate to the user account, the ability to determine the identity of the individual user or group will not be available for forensic analysis.
+
+This requirement only applies to components where this is specific to the function of the device or has the concept of a user (e.g., VPN or ALG. This does not apply to authentication for the purpose of configuring the device itself (i.e., device management).
+
+SRG Check:
+Verify the VPN Gateway maps the authenticated identity to the user account for PKI-based authentication.
+
+If the VPN Gateway does not map the authenticated identity to the user account for PKI-based authentication, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to map the authenticated identity to the user account for PKI-based authentication.
+

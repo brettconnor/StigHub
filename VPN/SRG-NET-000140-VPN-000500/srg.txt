@@ -1,0 +1,33 @@
+
+SRG-NET-000140-VPN-000500
+
+Severity:
+high
+
+SRG Requirement:
+The VPN Gateway must use multifactor authentication (e.g., DoD PKI) for network access to non-privileged accounts.
+
+SRG VulDiscussion:
+To assure accountability and prevent unauthenticated access, non-privileged users must utilize multifactor authentication to prevent potential misuse and compromise of the system.
+
+Multifactor authentication uses two or more factors to achieve authentication. Use of password for user remote access for non-privileged account is not authorized.
+
+Factors include:
+(i) Something you know (e.g., password/PIN);
+(ii) Something you have (e.g., cryptographic identification device, token); or
+(iii) Something you are (e.g., biometric).
+
+A non-privileged account is any information system account with authorizations of a non-privileged user.
+
+Network access is any access to a network element by a user (or a process acting on behalf of a user) communicating through a network.
+
+The DoD CAC with DoD-approved PKI is an example of multifactor authentication.
+
+SRG Check:
+Verify the VPN Gateway uses multifactor authentication (e.g., DoD PKI) for network access to non-privileged accounts.
+
+If the VPN Gateway does not use multifactor authentication (e.g., DoD PKI) for network access to non-privileged accounts, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to use multifactor authentication (e.g., DoD PKI) for network access to non-privileged accounts.
+

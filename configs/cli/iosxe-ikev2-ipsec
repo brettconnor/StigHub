@@ -1,0 +1,116 @@
+! IOS XE site-to-site IPsec VPN template using route-based VTIs.
+! Replace all placeholders and validate platform/release support before use.
+! WAN IP ingress is restricted to peer-specific IKE and ESP only.
+! Add approved routing and authorization for decrypted tunnel traffic.
+! Static WAN addressing/next hops are assumed; DHCP, RA, routing protocols,
+! and direct WAN management are blocked. Deploy with console/OOB access.
+! ICMP/ICMPv6 (including ND and PMTU errors) is also blocked. IPv6 requires
+! an approved alternative to dynamic neighbor discovery; PMTU may fail.
+! IPv4 ARP is Layer 2 and is not filtered by these IP ACLs.
+!
+! IKEv2 proposal. GCM provides authenticated encryption; no separate
+! integrity transform is configured for AES-GCM.
+crypto ikev2 proposal IKE2-PROP
+ encryption aes-gcm-256
+ prf sha256
+ group 19
+!
+crypto ikev2 policy IKE2-POLICY
+ proposal IKE2-PROP
+!
+! Use unique peer secrets provisioned outside this file. Never commit
+! operational pre-shared keys to source control.
+crypto ikev2 keyring IKE2-KEYRING
+ peer <IPSEC-PEER-NAME>
+  address <IPSEC-PEER-IP>
+  pre-shared-key local <IPSEC-LOCAL-PSK>
+  pre-shared-key remote <IPSEC-PEER-PSK>
+ peer <IPSEC-IP6-PEER-NAME>
+  address <IPSEC-PEER-IP6>/<IP6-PREFIX>
+  pre-shared-key local <IPSEC-LOCAL-PSK6>
+  pre-shared-key remote <IPSEC-PEER-PSK6>
+!
+crypto ikev2 profile IKE2-PROFILE
+ match identity remote address <IPSEC-PEER-IP> <IPSEC-PEER-MASK>
+ authentication remote pre-share
+ authentication local pre-share
+ keyring local IKE2-KEYRING
+!
+crypto ikev2 profile IKE2-PROFILE6
+ match identity remote address <IPSEC-PEER-IP6>/<IP6-PREFIX>
+ authentication remote pre-share
+ authentication local pre-share
+ keyring local IKE2-KEYRING
+!
+! AES-GCM is an AEAD transform and does not use a separate ESP HMAC.
+crypto ipsec transform-set TSET_Tunnel esp-gcm 256
+ mode tunnel
+!
+crypto ipsec profile TNL_Profile
+ set transform-set TSET_Tunnel
+ set ikev2-profile IKE2-PROFILE
+!
+crypto ipsec profile TNL_Profile6
+ set transform-set TSET_Tunnel
+ set ikev2-profile IKE2-PROFILE6
+!
+interface Tunnel <TUN-INT>
+ ip address <TUN-IP> <TUN-MASK>
+ tunnel source <WAN-IP>
+ tunnel mode ipsec ipv4
+ tunnel destination <IPSEC-PEER-IP>
+ tunnel protection ipsec profile TNL_Profile
+!
+interface Tunnel <TUN-INT6>
+ bandwidth inherit
+ no ip address
+ ipv6 address <TUN-IP6>/<TUN-PREFIX>
+ ipv6 mtu 1280
+ tunnel source <WAN-IP6>
+ tunnel mode ipsec ipv6
+ tunnel destination <IPSEC-PEER-IP6>
+ tunnel path-mtu-discovery
+ tunnel protection ipsec profile TNL_Profile6
+!
+! IKE must reach IKE/IPsec processing; an ACL permit is not authentication.
+ip access-list extended WAN-VPN-IN
+ permit udp host <IPSEC-PEER-IP> host <WAN-IP> eq 500
+ permit esp host <IPSEC-PEER-IP> host <WAN-IP>
+ deny ip any any
+!
+ipv6 access-list WAN-VPN6-IN
+ permit udp host <IPSEC-PEER-IP6> host <WAN-IP6> eq 500
+ permit esp host <IPSEC-PEER-IP6> host <WAN-IP6>
+ deny ipv6 any any
+!
+! Apply to the outer WAN L3 interface, NOT the decrypted tunnel interface.
+! Validate the platform's VTI/ACL processing order and tunnel data flow.
+! Option A: routed Layer 3 WAN interface. Use this OR Option B.
+interface <WAN-INT>
+ ip address <WAN-IP> <WAN-SUBNET>
+ ip access-group WAN-VPN-IN in
+ ip tcp adjust-mss 1300
+ load-interval 30
+ negotiation auto
+ ipv6 address <WAN-IP6>/<WAN-PREFIX>
+ ipv6 traffic-filter WAN-VPN6-IN in
+ ipv6 mtu 1280
+ ipv6 nd ra suppress all
+ ipv6 tcp adjust-mss 1300
+!
+! Option B: use an SVI when the WAN-facing module/port operates at Layer 2.
+! Remove Option A if using this alternative. Confirm platform support.
+interface <WAN-INT>
+ switchport access vlan <VLAN>
+!
+interface Vlan<VLAN>
+ ip address <WAN-IP> <WAN-SUBNET>
+ ip access-group WAN-VPN-IN in
+ ip tcp adjust-mss 1300
+ load-interval 30
+ ipv6 address <WAN-IP6>/<WAN-PREFIX>
+ ipv6 traffic-filter WAN-VPN6-IN in
+ ipv6 mtu 1280
+ ipv6 nd ra suppress all
+ ipv6 tcp adjust-mss 1300
+!

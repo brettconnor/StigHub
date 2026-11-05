@@ -1,0 +1,22 @@
+
+SRG-NET-000089-VPN-000330
+
+Severity:
+low
+
+SRG Requirement:
+The VPN Gateway must generate log records containing information to establish the source of the events.
+
+SRG VulDiscussion:
+Without establishing the source of the event, it is impossible to establish, correlate, and investigate the events leading up to an outage or attack. In order to compile an accurate risk assessment and provide forensic analysis, security personnel need to know the source of the event.
+
+In addition to logging where events occur within the network, the log records must also identify sources of events such as IP addresses, processes, and node or device names.
+
+SRG Check:
+Verify the VPN Gateway  generates log records containing information to establish the source of the events.
+
+If the VPN Gateway does not generate log records containing information to establish the source of the events, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to generate log records containing information to establish the source of the events.
+

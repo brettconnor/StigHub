@@ -1,0 +1,22 @@
+
+SRG-NET-000132-VPN-000460
+
+Severity:
+medium
+
+SRG Requirement:
+The IPsec VPN Gateway must use IKEv2 for IPsec VPN security associations.
+
+SRG VulDiscussion:
+In order to prevent unauthorized connection of devices, unauthorized transfer of information, or unauthorized tunneling (i.e., embedding of data types within data types); organizations must disable or restrict unused or unnecessary physical and logical ports/protocols on information systems.
+
+Use of IKEv2 leverages DoS protections because of improved bandwidth management and leverages more secure encryption algorithms.
+
+SRG Check:
+Verify the IPsec VPN Gateway uses IKEv2 for IPsec VPN security associations.
+
+If the IPsec VPN Gateway must use IKEv2 for IPsec VPN security associations, this is a finding.
+
+SRG Fix:
+Configure the IPsec VPN Gateway to use IKEv2 for IPsec VPN security associations.
+

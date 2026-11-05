@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must ensure inbound and outbound traffic is configured with a security policy in compliance with information flow control policies.

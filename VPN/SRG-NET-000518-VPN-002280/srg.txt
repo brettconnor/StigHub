@@ -1,0 +1,24 @@
+
+SRG-NET-000518-VPN-002280
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Client logout function must be configured to terminate the session on/with the VPN Gateway.
+
+SRG VulDiscussion:
+If a user cannot explicitly end a session, the session may remain open and be exploited by an attacker; this is referred to as a zombie session.
+
+However, for some types of interactive sessions including, for example, remote login, information systems typically send logout messages as final messages prior to terminating sessions.
+
+This applies to VPN gateways that have the concept of a user account and have the login function residing on the VPN gateway.
+
+SRG Check:
+Verify the VPN Client logout function is configured to terminate the session on/with the VPN Gateway.
+
+If the VPN Client logout function does not terminate the session on/with the VPN Gateway, this is a finding.
+
+SRG Fix:
+Configure the VPN Client logout log out function must be configured to terminate the session on/with the VPN Gateway.
+

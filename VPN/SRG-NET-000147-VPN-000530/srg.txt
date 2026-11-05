@@ -1,0 +1,20 @@
+
+SRG-NET-000147-VPN-000530
+
+Severity:
+medium
+
+SRG Requirement:
+The IPsec VPN Gateway must use anti-replay mechanisms for security associations.
+
+SRG VulDiscussion:
+Anti-replay is an IPsec security mechanism at a packet level, which helps to avoid unwanted users from intercepting and modifying an ESP packet.
+
+SRG Check:
+Verify the IPsec VPN Gateway  uses anti-replay mechanisms for security associations.
+
+If the IPsec VPN Gateway does not use anti-replay mechanisms for security associations, this is a finding.
+
+SRG Fix:
+Configure the IPsec VPN Gateway to use anti-replay mechanisms for security associations.
+

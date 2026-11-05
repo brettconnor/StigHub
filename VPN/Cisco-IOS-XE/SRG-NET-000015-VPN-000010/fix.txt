@@ -1,0 +1,23 @@
+ip access-list extended WAN-VPN-IN
+ permit udp host <IPSEC-PEER-IP> host <WAN-IP> eq 500
+ permit esp host <IPSEC-PEER-IP> host <WAN-IP>
+ deny ip any any
+!
+ipv6 access-list WAN-VPN6-IN
+ permit udp host <IPSEC-PEER-IP6> host <WAN-IP6> eq 500
+ permit esp host <IPSEC-PEER-IP6> host <WAN-IP6>
+ deny ipv6 any any
+!
+! Apply to the outer WAN L3 interface, NOT the decrypted tunnel interface.
+! Validate the platform's VTI/ACL processing order and tunnel data flow.
+! Option A: routed Layer 3 WAN interface. Use this OR Option B.
+interface <WAN-INT>
+ ip access-group WAN-VPN-IN in
+ ipv6 traffic-filter WAN-VPN6-IN in
+!
+! Option B: use an SVI when the WAN-facing module/port operates at Layer 2.
+! Remove Option A if using this alternative. Confirm platform support.
+interface Vlan<VLAN>
+ ip access-group WAN-VPN-IN in
+ ipv6 traffic-filter WAN-VPN6-IN in
+!

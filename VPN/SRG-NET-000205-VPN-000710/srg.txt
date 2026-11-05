@@ -1,0 +1,24 @@
+
+SRG-NET-000205-VPN-000710
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must be configured to route sessions to an IDPS for inspection.
+
+SRG VulDiscussion:
+Remote access devices, such as those providing remote access to network devices and information systems, which lack automated, capabilities increase risk and makes remote user access management difficult at best.
+
+Remote access is access to DoD non-public information systems by an authorized user (or an information system) communicating through an external, non-organization-controlled network.
+
+Automated monitoring of remote access sessions allows organizations to detect cyber attacks and ensure ongoing compliance with remote access policies by auditing connection activities of remote access capabilities, from a variety of information system components (e.g., servers, workstations, notebook computers, smart phones, and tablets).
+
+SRG Check:
+Verify the VPN Gateway routes sessions to an IDPS for inspection.
+
+If the VPN Gateway is not  configured to route sessions to an IDPS for inspection, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to route sessions to an IDPS for inspection.
+

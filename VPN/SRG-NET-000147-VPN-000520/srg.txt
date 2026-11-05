@@ -1,0 +1,28 @@
+
+SRG-NET-000147-VPN-000520
+
+Severity:
+medium
+
+SRG Requirement:
+The TLS VPN must be configured to use replay-resistant authentication mechanisms for network access to nonprivileged accounts.
+
+SRG VulDiscussion:
+A replay attack may enable an unauthorized user to gain access to the application. Authentication sessions between the authenticator and the application validating the user credentials must not be vulnerable to a replay attack.
+
+An authentication process resists replay attacks if it is impractical to achieve a successful authentication by recording and replaying a previous authentication message.
+
+A nonprivileged account is any operating system account with authorizations of a nonprivileged user.
+
+Techniques used to address this include protocols using nonces (e.g., numbers generated for a specific one-time use) or challenges (e.g., TLS, WS_Security). Additional techniques include time-synchronous or challenge-response one-time authenticators.
+
+This requirement only applies to components where this is specific to the function of the device or has the concept of an organizational user (e.g., VPN, proxy capability). This does not apply to authentication for the purpose of configuring the device itself (i.e., device management).
+
+SRG Check:
+Verify the TLS VPN Gateway is configured to use replay-resistant authentication mechanisms for network access to nonprivileged accounts.
+
+If the TLS VPN is not configured to use replay-resistant authentication mechanisms for network access to nonprivileged accounts, this is a finding.
+
+SRG Fix:
+Configure the TLS VPN Gateway to use replay-resistant authentication mechanisms for network access to nonprivileged accounts.
+

@@ -1,0 +1,22 @@
+
+SRG-NET-000075-VPN-000260
+
+Severity:
+medium
+
+SRG Requirement:
+If the site-to-site VPN implementation uses L2TP, L2TPv3 sessions must be authenticated prior to transporting traffic.
+
+SRG VulDiscussion:
+L2TPv3 sessions can be used to transport layer-2 protocols across an IP backbone. These protocols were intended for link-local scope only and are therefore less defended and not as well-known. As stated in DoD IPv6 IA Guidance for MO3 (S4-C7-1), the L2TP tunnels can also carry IP packets that are very difficult to filter because of the additional encapsulation. Hence, it is imperative that L2TP sessions are authenticated prior to transporting traffic.
+
+SRG Check:
+If L2TP communications protocol is not used, this is not applicable.
+
+Verify L2TPv3 sessions are configured to authenticate the traffic before transit. L2TPv3 sessions must be authenticated prior to transporting traffic.
+
+If L2TPv3 sessions do not require authentication, this is a finding.
+
+SRG Fix:
+If the site-to-site VPN implementation uses L2TPv3, configure L2TPv3 sessions to authenticate the traffic before transit.
+

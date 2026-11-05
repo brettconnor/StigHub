@@ -1,0 +1,20 @@
+
+SRG-NET-000234-VPN-000810
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must generate unique session identifiers using FIPS-validated Random Number Generator (RNG) based on the Deterministic Random Bit Generators (DRBG) algorithm.
+
+SRG VulDiscussion:
+Both IPsec and TLS gateways use the RNG to strengthen the security of the protocols. Using a weak RNG will weaken the protocol and make it more vulnerable.
+
+SRG Check:
+Verify the VPN Gateway generates unique session identifiers using FIPS-validated Random Number Generator (RNG) based on the Deterministic Random Bit Generators (DRBG) algorithm.
+
+If the VPN Gateway does not generate unique session identifiers using FIPS-validated Random Number Generator (RNG) based on the Deterministic Random Bit Generators (DRBG) algorithm, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to generate unique session identifiers using FIPS-validated Random Number Generator (RNG) based on the Deterministic Random Bit Generators (DRBG) algorithm.
+

@@ -1,0 +1,34 @@
+
+SRG-NET-000369-VPN-001620
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must disable split-tunneling for remote clients VPNs.
+
+SRG VulDiscussion:
+Split tunneling would in effect allow unauthorized external connections, making the system more vulnerable to attack and to exfiltration of organizational information.
+
+A VPN hardware or software client with split tunneling enabled provides an unsecured backdoor to the enclave from the Internet. With split tunneling enabled, a remote client has access to the Internet while at the same time has established a secured path to the enclave via an IPsec tunnel. A remote client connected to the Internet that has been compromised by an attacker in the Internet, provides an attack base to the enclave’s private network via the IPsec tunnel. Hence, it is imperative that the VPN gateway enforces a no split-tunneling policy to all remote clients.
+
+SRG Check:
+Verify the VPN Gateway disables split-tunneling for remote clients VPNs.
+
+If the VPN Gateway does not disable split-tunneling for remote clients VPNs, this is a finding.
+
+Note: Certain cloud products require direct connectivity to operate correctly. These items may be excluded from the split tunneling restriction if documented and approved.
+
+If split-tunneling for remote client VPNs is enabled by the above exception, verify only authorized external destinations are excluded from tunneling as shown in the example below:
+
+Webvpn
+anyconnect-custom-attr dynamic-split-exclude-domains description DoD IL5 Authorized Destinations
+anyconnect-custom-data dynamic-split-exclude-domains DoD-IL5 dod.teams.microsoft.us,azureedge.net,core.usgovcloudapi.net,streaming.media.usgovcloudapi.net,wvd.azure.us,cdn.office365.us
+
+ anyconnect-custom dynamic-split-exclude-domains value DoD-IL5
+
+If any unauthorized exempted connections exist, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to disable split-tunneling for remote clients VPNs.
+

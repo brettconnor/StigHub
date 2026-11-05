@@ -1,0 +1,24 @@
+
+SRG-NET-000334-VPN-001260
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must off-load audit records onto a different system or media than the system being audited.
+
+SRG VulDiscussion:
+Information stored in one location is vulnerable to accidental or incidental deletion or alteration.
+
+Off-loading is a common process in information systems with limited audit storage capacity.
+
+This requirement only applies to components where this is specific to the function of the device (e.g., IDPS sensor logs, firewall logs). This does not apply to audit logs generated on behalf of the device itself (management).
+
+SRG Check:
+Verify the VPN Gateway off-loads log records onto a different system or media than the system being audited.
+
+If the VPN Gateway does not off-load audit records onto a different system or media than the system being audited, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to off-load audit records onto a different system or media than the system being audited.
+

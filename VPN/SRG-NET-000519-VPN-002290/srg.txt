@@ -1,0 +1,24 @@
+
+SRG-NET-000519-VPN-002290
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Client must display an explicit logout message to users indicating the reliable termination of authenticated communications sessions.
+
+SRG VulDiscussion:
+If a user cannot explicitly end a session, the session may remain open and be exploited by an attacker; this is referred to as a zombie session. Users need to be aware of whether or not the session has been terminated.
+
+Logout messages for access, for example, can be displayed after authenticated sessions have been terminated. However, for some types of interactive sessions including, for example, remote login, information systems typically send logout messages as final messages prior to terminating sessions.
+
+This applies to VPN gateways that have the concept of a user account and have the login function residing on the VPN gateway.
+
+SRG Check:
+Verify the VPN Client displays an explicit logout message to users indicating the reliable termination of authenticated communications sessions.
+
+If the VPN Client does not display an explicit logout message to users indicating the reliable termination of authenticated communications sessions, this is a finding.
+
+SRG Fix:
+Configure the VPN Client to display an explicit logout message to users indicating the reliable termination of authenticated communications sessions.
+

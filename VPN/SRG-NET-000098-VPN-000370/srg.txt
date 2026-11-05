@@ -1,0 +1,22 @@
+
+SRG-NET-000098-VPN-000370
+
+Severity:
+low
+
+SRG Requirement:
+The VPN Gateway must protect log information from unauthorized read access if all or some of this data is stored locally.
+
+SRG VulDiscussion:
+Auditing and logging are key components of any security architecture. Logging the actions of specific events provides a means to investigate an attack, recognize resource utilization or capacity thresholds, or to simply identify an improperly configured VPN gateway. Thus, it is imperative that the collected log data from the various VPN gateways, as well as the auditing tools, be secured and can only be accessed by authorized personnel.
+
+This requirement pertains to securing the VPN log as it is stored locally, on the box temporarily, or while being encapsulated.
+
+SRG Check:
+Verify the VPN Gateway protects log information from unauthorized read access if all or some of this data is stored locally.
+
+If the VPN Gateway does not protect log information from unauthorized read access if all or some of this data is stored locally, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to protect log information from unauthorized read access if all or some of this data is stored locally.
+

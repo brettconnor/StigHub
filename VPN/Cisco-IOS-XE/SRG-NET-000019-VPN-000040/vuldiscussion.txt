@@ -1,0 +1,5 @@
+Unrestricted traffic may contain malicious traffic which poses a threat to an enclave or to other connected networks. Additionally, unrestricted traffic may transit a network, which uses bandwidth and other resources.
+
+VPN traffic received from another enclave with different security policy or level of trust must not bypass be inspected by the firewall before being forwarded to the private network.
+
+This requirement also applies to Zero Trust initiatives.

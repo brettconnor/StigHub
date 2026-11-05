@@ -1,0 +1,15 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+
+# Downloaded and extracted SRG source data
+/zips/
+/srgs/
+
+# Generated product-specific templates
+/VPN/Cisco-*/
+!/VPN/Cisco-IOS-XE/
+
+# macOS
+.DS_Store

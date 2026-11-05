@@ -1,0 +1,20 @@
+
+SRG-NET-000079-VPN-000300
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must generate log records containing information that establishes the identity of any individual or process associated with the event.
+
+SRG VulDiscussion:
+Without information that establishes the identity of the subjects (i.e., users or processes acting on behalf of users) associated with the events, security personnel cannot determine responsibility for the potentially harmful event.
+
+SRG Check:
+Verify the VPN Gateway generates log records containing information that establishes the identity of any individual or process associated with the event.
+
+If the VPN Gateway does not generate log records containing information that establishes the identity of any individual or process associated with the event, this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to generate log records containing information that establishes the identity of any individual or process associated with the event.
+

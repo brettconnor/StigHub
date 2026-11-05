@@ -1,0 +1,2 @@
+# Only Excel imports (and Excel acceptance tests) need a third-party package.
+openpyxl>=3.1.5,<4

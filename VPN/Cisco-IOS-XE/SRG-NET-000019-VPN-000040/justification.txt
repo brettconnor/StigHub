@@ -1,0 +1,3 @@
+The site-to-site VPN security policy uses ESP in tunnel mode to protect traffic between the designated peers. The TSET_Tunnel transform set specifies ESP AES-GCM-256 and tunnel mode, and the TNL_Profile and TNL_Profile6 IPsec profiles associate this protection with IKEv2 peer authentication.
+
+Applying these profiles to the IPv4 and IPv6 tunnel interfaces encrypts and integrity-protects outbound tunnel traffic and validates and decrypts inbound protected traffic. This enforces the established IPsec security policy in both directions for site-to-site information flows.

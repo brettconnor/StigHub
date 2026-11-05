@@ -1,0 +1,22 @@
+
+SRG-NET-000169-VPN-000610
+
+Severity:
+medium
+
+SRG Requirement:
+The VPN Gateway must uniquely identify and authenticate non-organizational users (or processes acting on behalf of non-organizational users).
+
+SRG VulDiscussion:
+Lack of authentication and identification enables non-organizational users to gain access to the network or possibly a VPN gateway that provides opportunity for intruders to compromise resources within the network infrastructure.
+
+This requirement only applies to components where this is specific to the function of the device or has the concept of a non-organizational user.
+
+SRG Check:
+Configure the VPN Gateway to uniquely identify and authenticate non-organizational users (or processes acting on behalf of non-organizational users).
+
+If the VPN Gateway does not uniquely identify and authenticate non-organizational users (or processes acting on behalf of non-organizational users), this is a finding.
+
+SRG Fix:
+Configure the VPN Gateway to uniquely identify and authenticate non-organizational users (or processes acting on behalf of non-organizational users).
+

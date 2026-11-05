@@ -1,0 +1,3 @@
+The operator-defined WAN ingress policy authorizes only VPN transport from the designated peer; ordinary WAN IP traffic is not authorized. The WAN-VPN-IN and WAN-VPN6-IN access lists implement this policy by permitting only IKE on UDP destination port 500 and native ESP from the configured peer address to the router's WAN address. 
+
+This fix supports the requirement by enforcing the stated WAN ingress authorization boundary.

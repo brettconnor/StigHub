@@ -1,0 +1,3 @@
+The operator-defined information flow control policy authorizes only peer-specific IKE and native ESP at the WAN ingress boundary. The WAN-VPN-IN and WAN-VPN6-IN access lists enforce this policy by restricting inbound IPv4 and IPv6 flows to UDP destination port 500 and ESP from the designated peer address to the router's WAN address.
+
+Applying these access lists inbound on the WAN Layer 3 interface enforces the authorized sources, destinations, and protocols at the network boundary, supporting the requirement to control information flow according to organization-defined policy.
