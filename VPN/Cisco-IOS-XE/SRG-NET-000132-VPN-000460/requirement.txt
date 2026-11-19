@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must use IKEv2 for IPsec VPN security associations.

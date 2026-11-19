@@ -29,6 +29,14 @@ site-to-site traffic. Firewall and IDPS functions, configuration, and
 deployment evidence are outside this project's assessment scope. Apply
 this operator-established scope without requesting reconfirmation.
 
+For `SRG-NET-000098-VPN-000370`, ISR 4000 and ASR 1000 routers remain
+in scope even though, per the operator, they do not support IOS XE 26.x.
+The operator's local-access policy uses one local privilege-15 account.
+Use `configs/cli/iosxe-local-access.cisco` for the local-access configuration.
+Verify configuration support for the target platform and release, and verify
+that physical console access and other management paths are restricted to
+authorized personnel. Configuration alone is not device compliance evidence.
+
 For `SRG-NET-000019-VPN-000040`, assess the router's inbound/outbound IPsec
 security policy and ESP tunnel-mode configuration. Do not make its
 router-scoped status depend on firewall/IDPS topology or inspection evidence.
@@ -68,6 +76,19 @@ The golden template covers only site-to-site VPN configuration. Keep
 general management controls, including login banners, in their approved
 supplemental sources rather than expanding that template.
 
+For applicable logging controls, use the operator-approved supplemental
+template `configs/cli/iosxe-logging.cisco` and select only the commands
+needed for the requirement. See
+`skills/build-ipsec-vpn-config/references/logging.md` for sources and
+verification notes. Configuration alone is not evidence of device behavior
+or compliance.
+
+For `SRG-NET-000079-VPN-000300`, the operator limits assessment to VPN
+data-plane and control-plane events; management-plane administrator actions
+are covered separately. The operator accepts identification of the VPN peer
+in crypto session logs for this scope. Verify the relevant event records on
+the target device rather than inferring them from IKEv2 authentication alone.
+
 The operator has designated `SRG-NET-000019-VPN-002435` as fully outside
 the assessed product's scope because TLS VPN is unsupported in this
 site-to-site IOS-XE VPN router project. Complete Steps 1-3 for out-of-scope
@@ -85,6 +106,20 @@ configuration-focused wording. Step 7 writes exactly `Not Applicable`
 followed by a newline to `status.txt`.
 
 ## Policy selection
+
+For `SRG-NET-000132-VPN-000450`, the operator selects console management
+and limits this authoring assessment to remote-management entry points:
+SSH/VTY, NETCONF, HTTP/HTTPS, and RESTCONF. These entry points are unnecessary
+for this console-managed site-to-site deployment. Use the disable blocks in
+`configs/cli/iosxe-local-access.cisco`; retain the existing peer-specific
+IKEv2/native ESP WAN policy without changing the golden VPN template.
+NETCONF and RESTCONF remain supported capabilities, not enabled services
+in this baseline. This scope decision supersedes their earlier retention
+comments. Preserve the shared requirement and copied discussion verbatim;
+`Met` under this interpretation is not evidence that every IOS-XE service
+is disabled or that a full PPSM CAL/vulnerability assessment was performed.
+Verify all VTY ranges, independent NETCONF listeners, web/API state, and
+console recovery on the exact platform and release before deployment.
 
 Always use the existing, simpler operator-established policy when one
 applies to the requirement. Reuse it without asking the operator to choose
@@ -170,8 +205,13 @@ The Cisco IOS-XE VPN router must enforce approved authorizations for logical acc
 
 ## Step 4: Populate fix.txt
 
-1. Read the selected requirement and the canonical golden configuration
-   template at `configs/cli/iosxe-ikev2-ipsec`. For applicable controls
+1. Read the selected requirement and the appropriate golden configuration
+   variant at `configs/cli/iosxe-ikev2-ipsec-psk.cisco` or
+   `configs/cli/iosxe-ikev2-ipsec-x509.cisco`. Select the established
+   deployment's authentication method; previously authored PSK fixes remain
+   based on the PSK variant. These are alternatives, not combined
+   configuration. X.509 is not a prerequisite for the operator's
+   `Not Applicable` decision for SRG-NET-000140-VPN-000500. For applicable controls
    outside its site-to-site VPN scope, use an operator-approved supplemental
    source directly and retain its web reference under
    `skills/build-ipsec-vpn-config/references/`.

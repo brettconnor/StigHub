@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router provides site-to-site, router-to-router IPsec connectivity rather than organizational-user VPN client access and has no nonprivileged VPN user accounts. This requirement excludes device-management authentication and is therefore not applicable to the assessed deployment, whether VPN peers use pre-shared keys or X.509 certificates.

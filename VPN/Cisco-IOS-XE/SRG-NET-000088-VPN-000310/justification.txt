@@ -1,0 +1,1 @@
+The informational log buffer records events locally on the VPN router. Viewing the local log identifies the router where the recorded events occurred.

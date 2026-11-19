@@ -1,0 +1,1 @@
+System message logging records informational and more severe events in the local buffer. Cisco IOS-XE system messages include a facility, severity, mnemonic, and description that identify the type of event.

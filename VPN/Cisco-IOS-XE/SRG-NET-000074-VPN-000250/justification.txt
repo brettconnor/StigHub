@@ -1,0 +1,1 @@
+The IKE2-PROP proposal specifies Diffie-Hellman group 19 for the IKEv2 initial key exchange, and IKE2-POLICY selects that proposal. This configures the VPN to use a DH group meeting the requirement's group 16-or-greater criterion.

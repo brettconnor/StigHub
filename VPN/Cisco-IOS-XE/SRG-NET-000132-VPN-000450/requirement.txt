@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must be configured to prohibit the use of all unnecessary and/or nonsecure functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.

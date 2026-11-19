@@ -1,0 +1,2 @@
+show running-config | include ^service timestamps
+show logging

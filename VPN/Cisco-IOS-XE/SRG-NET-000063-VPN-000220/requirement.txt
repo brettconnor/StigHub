@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must be configured to use IPsec with SHA-2 at 384 bits or greater for hashing to protect the integrity of remote access sessions.

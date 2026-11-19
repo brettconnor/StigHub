@@ -12,5 +12,10 @@ platform or release.
   discovery limitations, and the VPN-transport-only ingress policy.
 - [Login banner](login-banner.md) — operator-supplied IOS-XE management
   recipe for the applicable notice-and-consent banner requirement.
+- [System logging](logging.md) — IOS-XE logging recipe and event type
+  reference for the VPN router.
+- [Local log access](local-log-access.md) — operator-approved starting
+  recipe, credential-storage considerations, and console-only
+  remote-management disablement sources.
 - [Session limits](session-limits.md) — per-user SSH session control and
   the distinction between recipe values and SSP-defined policy.

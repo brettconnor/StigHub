@@ -1,0 +1,3 @@
+service timestamps log datetime msec
+logging buffered informational
+logging on

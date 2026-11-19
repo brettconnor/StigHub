@@ -6,6 +6,13 @@ Cisco documents retain their original content and copyright notices.
 Nothing in this snapshot establishes certification, compliance, live-device
 testing, stock availability, or a fielding approval.
 
+## IKEv2 protocol reference
+
+- [IKEv2 Packet Exchange and Protocol-Level Debugging](./IKEv2-packet-exchange.md)
+  — Cisco's IKEv1/IKEv2 exchange comparison and terminology.
+- [IOS-XE VPN router service inventory — draft](./iosxe-service-inventory-matrix.md)
+  — proposed service review matrix, evidence and unresolved platform coverage.
+
 ## Product IDs
 
 These are the platform IDs listed in the latest family datasheets found,

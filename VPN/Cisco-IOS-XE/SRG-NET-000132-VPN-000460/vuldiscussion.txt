@@ -1,0 +1,3 @@
+In order to prevent unauthorized connection of devices, unauthorized transfer of information, or unauthorized tunneling (i.e., embedding of data types within data types); organizations must disable or restrict unused or unnecessary physical and logical ports/protocols on information systems.
+
+Use of IKEv2 leverages DoS protections because of improved bandwidth management and leverages more secure encryption algorithms.

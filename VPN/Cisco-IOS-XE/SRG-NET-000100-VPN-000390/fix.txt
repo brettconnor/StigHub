@@ -1,0 +1,13 @@
+username <LOCAL-ADMIN> secret <SECRET-TYPE> <PROVISIONED-USER-HASH>
+username <LOCAL-ADMIN> privilege 15
+enable secret <SECRET-TYPE> <PROVISIONED-ENABLE-HASH>
+!
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+!
+line console 0
+ login authentication default
+!
+line vty 0 <LAST-VTY>
+ login authentication default

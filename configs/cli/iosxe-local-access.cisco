@@ -1,0 +1,40 @@
+! Candidate console-managed baseline for the site-to-site VPN router.
+! Select <SECRET-TYPE> as 8 (PBKDF2-SHA-256) or 9 (scrypt) only when
+! supported by the exact target platform and release. Use matching,
+! separately provisioned hashes for the local user and enable secret.
+! Replace placeholders securely; never store operational hashes here.
+! Review existing AAA and retain out-of-band recovery before changes.
+! Confirm that only authorized users can access the console, VTYs,
+! persistent log files, and other enabled management paths.
+!
+! Apply from a verified console session: remote management is disabled.
+! RESTCONF and NETCONF remain supported product capabilities, but are
+! unnecessary in this console-only baseline. Enabling either requires
+! a separately approved remote-management policy and secure configuration.
+no restconf
+no netconf-yang
+! Disable legacy NETCONF-over-SSH as well, where supported.
+no netconf ssh
+no ip http server
+no ip http secure-server
+!
+username <LOCAL-ADMIN> secret <SECRET-TYPE> <PROVISIONED-USER-HASH>
+username <LOCAL-ADMIN> privilege 15
+enable secret <SECRET-TYPE> <PROVISIONED-ENABLE-HASH>
+!
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+!
+line console 0
+ login authentication default
+!
+! Replace <LAST-VTY> with the highest enabled VTY line.
+! Cover every VTY range; deny new SSH, Telnet and other VTY connections.
+line vty 0 <LAST-VTY>
+ login authentication default
+ transport input none
+!
+! This template does not remove other accounts or disable every service.
+! Check for existing sessions separately; do not assume they are terminated.
+! Verify console access and rejected remote connections on the target device.

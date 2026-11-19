@@ -1,0 +1,1 @@
+Cisco IOS-XE crypto session up and down messages identify VPN session state transitions. The informational log buffer records these messages, establishing the session outcome under the site-to-site assessment.

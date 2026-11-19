@@ -1,0 +1,2 @@
+show running-config | include ^username|^enable secret|^aaa
+show running-config | section ^line

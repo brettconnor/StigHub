@@ -1,0 +1,5 @@
+Without strong cryptographic integrity protections, information can be altered by unauthorized users without detection.
+
+SHA-1 is considered a compromised hashing standard and is being phased out of use by industry and government standards. DOD systems must not be configured to use SHA-1 for integrity of remote access sessions. 
+
+The remote access VPN provides access to DOD nonpublic information systems by an authorized user (or an information system) communicating through an external, non-organization-controlled network.

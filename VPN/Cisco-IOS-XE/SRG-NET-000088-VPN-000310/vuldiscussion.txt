@@ -1,0 +1,5 @@
+Without establishing where events occurred, it is impossible to establish, correlate, and investigate the events leading up to an outage or attack.
+
+In order to compile an accurate risk assessment, and provide forensic analysis, it is essential for security personnel to know where events occurred, such as VPN gateway components, modules, device identifiers, node names, and functionality.
+
+Associating information about where the event occurred within the network provides a means of investigating an attack, recognizing resource utilization or capacity thresholds, or identifying an improperly configured VPN gateway.

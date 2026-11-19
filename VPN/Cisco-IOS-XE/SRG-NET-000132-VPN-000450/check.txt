@@ -1,0 +1,2 @@
+show running-config all | include ^(no )?(restconf|netconf-yang|netconf ssh|ip http server|ip http secure-server)
+show running-config all | section ^line vty

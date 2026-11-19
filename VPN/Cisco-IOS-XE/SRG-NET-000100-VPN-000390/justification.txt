@@ -1,0 +1,1 @@
+With the local administrator as the only account and physical console and other management paths restricted to authorized personnel, local authentication on console and VTY access protects locally stored VPN audit information from unauthorized deletion.

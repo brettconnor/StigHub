@@ -1,0 +1,8 @@
+crypto ikev2 proposal IKE2-PROP
+ encryption aes-gcm-256
+ prf sha256
+ group 19
+!
+crypto ikev2 policy IKE2-POLICY
+ proposal IKE2-PROP
+!

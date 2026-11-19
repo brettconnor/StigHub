@@ -1,0 +1,4 @@
+show running-config | section ^crypto ikev2
+show running-config | section ^crypto ipsec
+show running-config interface Tunnel <TUN-INT>
+show running-config interface Tunnel <TUN-INT6>

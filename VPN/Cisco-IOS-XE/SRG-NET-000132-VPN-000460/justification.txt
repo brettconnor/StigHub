@@ -1,0 +1,1 @@
+The IPv4 and IPv6 tunnel interfaces apply IPsec profiles that explicitly select their corresponding IKEv2 profiles. Those profiles use the configured peer keyring and IKEv2 proposal and policy to negotiate the site-to-site IPsec security associations with IKEv2.

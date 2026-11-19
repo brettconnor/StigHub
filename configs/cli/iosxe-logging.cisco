@@ -1,0 +1,24 @@
+! IOS XE VPN router system logging template.
+! Replace placeholders and validate platform/release support before use.
+! Use an approved management path to the syslog collector; the VPN WAN ACL
+! permits only peer-specific IKE and ESP. Protect log transport and storage
+! according to site policy; this example does not configure syslog TLS.
+! Synchronize the system clock using the approved time service.
+!
+service timestamps log datetime msec
+!
+! Persistent logging writes buffered messages to local storage.
+! Confirm available space, storage limits, rotation, and retention.
+logging buffered informational
+logging persistent threshold 75
+logging console notifications
+logging on
+!
+! The remote threshold permits severity 0-7 messages but does not enable
+! debugging. The local informational buffer excludes severity 7 messages.
+logging trap debugging
+logging source-interface <MGMT-INT> vrf <MGMT-VRF>
+logging host <SYSLOG-IP> vrf <MGMT-VRF>
+!
+! Verify show logging and representative VPN events on the target device.
+! These settings do not guarantee generation or delivery of every event.

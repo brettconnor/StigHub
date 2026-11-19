@@ -1,0 +1,1 @@
+The remote-access Cisco IOS-XE VPN router must be configured to prohibit Point-to-Point Tunneling Protocol (PPTP) and L2F.

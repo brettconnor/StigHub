@@ -1,0 +1,2 @@
+show running-config | section ^crypto ikev2 proposal
+show running-config | section ^crypto ikev2 policy

@@ -1,4 +1,5 @@
-! IOS XE site-to-site IPsec VPN template using route-based VTIs.
+! IOS XE site-to-site IPsec VPN template using X.509 and route-based VTIs.
+! Use this OR iosxe-ikev2-ipsec-psk.cisco, not both.
 ! Replace all placeholders and validate platform/release support before use.
 ! WAN IP ingress is restricted to peer-specific IKE and ESP only.
 ! Add approved routing and authorization for decrypted tunnel traffic.
@@ -7,6 +8,40 @@
 ! ICMP/ICMPv6 (including ND and PMTU errors) is also blocked. IPv6 requires
 ! an approved alternative to dynamic neighbor discovery; PMTU may fail.
 ! IPv4 ARP is Layer 2 and is not filtered by these IP ACLs.
+!
+! X.509 prerequisites: provision a dedicated non-exportable P-256 EC key
+! named VPN-IDENTITY-KEY and a CA-issued router identity certificate.
+! Example key generation (once): crypto key generate ec keysize 256 label VPN-IDENTITY-KEY
+! Authenticate the approved CA chain out of band, verify its fingerprints,
+! and enroll/import the identity certificate into VPN-TP before use.
+! No private keys or certificate payloads belong in this template.
+! Verify certificate validity, SHA-256-or-stronger signatures, key usage,
+! and the complete chain; retain trusted time and reachable OCSP/CRL services.
+! Prefer OCSP; try CRL if OCSP cannot determine status. Verify fallback
+! support and behavior on the target; a revoked certificate must be rejected.
+! Use issued certificate AIA/CDP locations for OCSP/CRL retrieval.
+! Retrieval needs a permitted path (e.g. OOB); the WAN ACL below is
+! unchanged and may block retrieval replies. Do not bypass revocation.
+! Confirm ECDSA IKEv2/PKI support on the exact PID/release, including
+! in-scope ISR 4000 and ASR 1000 releases; no PSK fallback is configured.
+crypto pki trustpoint VPN-TP
+ enrollment terminal pem
+ subject-name <LOCAL-ROUTER-SUBJECT-DN>
+ revocation-check ocsp crl
+ eckeypair VPN-IDENTITY-KEY
+ hash sha256
+!
+! Peer authZ: exact approved leaf subject and issuer, ANDed in each map.
+! Use full DNs in IOS certificate-map format, not a CA-wide substring.
+! Both paths may use the same peer certificate or separate approved peers.
+! These maps authorize router identities, not users or inner LAN traffic.
+crypto pki certificate map VPN-PEER4 10
+ subject-name eq <IPSEC-PEER-SUBJECT-DN>
+ issuer-name eq <IPSEC-PEER-ISSUER-DN>
+!
+crypto pki certificate map VPN-PEER6 10
+ subject-name eq <IPSEC-PEER6-SUBJECT-DN>
+ issuer-name eq <IPSEC-PEER6-ISSUER-DN>
 !
 ! IKEv2 proposal. GCM provides authenticated encryption; no separate
 ! integrity transform is configured for AES-GCM.
@@ -18,29 +53,25 @@ crypto ikev2 proposal IKE2-PROP
 crypto ikev2 policy IKE2-POLICY
  proposal IKE2-PROP
 !
-! Use unique peer secrets provisioned outside this file. Never commit
-! operational pre-shared keys to source control.
-crypto ikev2 keyring IKE2-KEYRING
- peer <IPSEC-PEER-NAME>
-  address <IPSEC-PEER-IP>
-  pre-shared-key local <IPSEC-LOCAL-PSK>
-  pre-shared-key remote <IPSEC-PEER-PSK>
- peer <IPSEC-IP6-PEER-NAME>
-  address <IPSEC-PEER-IP6>/<IP6-PREFIX>
-  pre-shared-key local <IPSEC-LOCAL-PSK6>
-  pre-shared-key remote <IPSEC-PEER-PSK6>
-!
+! Local-address matching is ANDed with the certificate map and separates
+! profiles even when the IPv4 and IPv6 paths use the same peer certificate.
+! Do not add a remote-address/identity match as an alternative: IOS ORs it
+! with match certificate, which would bypass the certificate allowlist.
 crypto ikev2 profile IKE2-PROFILE
- match identity remote address <IPSEC-PEER-IP> <IPSEC-PEER-MASK>
- authentication remote pre-share
- authentication local pre-share
- keyring local IKE2-KEYRING
+ match address local <WAN-IP>
+ match certificate VPN-PEER4
+ identity local dn
+ authentication remote ecdsa-sig
+ authentication local ecdsa-sig
+ pki trustpoint VPN-TP
 !
 crypto ikev2 profile IKE2-PROFILE6
- match identity remote address <IPSEC-PEER-IP6>/<IP6-PREFIX>
- authentication remote pre-share
- authentication local pre-share
- keyring local IKE2-KEYRING
+ match address local <WAN-IP6>
+ match certificate VPN-PEER6
+ identity local dn
+ authentication remote ecdsa-sig
+ authentication local ecdsa-sig
+ pki trustpoint VPN-TP
 !
 ! AES-GCM is an AEAD transform and does not use a separate ESP HMAC.
 crypto ipsec transform-set TSET_Tunnel esp-gcm 256

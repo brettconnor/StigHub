@@ -1,0 +1,1 @@
+System message logging records informational and more severe events in the local buffer. Date and time stamps identify when each logged event occurred.

@@ -1,0 +1,1 @@
+The remote access VPN Gateway must use a digital signature generated using FIPS-validated algorithms and an approved hash function to protect the integrity of TLS remote access sessions.

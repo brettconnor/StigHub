@@ -1,0 +1,9 @@
+no restconf
+no netconf-yang
+! Disable legacy NETCONF-over-SSH as well, where supported.
+no netconf ssh
+no ip http server
+no ip http secure-server
+!
+line vty 0 <LAST-VTY>
+ transport input none

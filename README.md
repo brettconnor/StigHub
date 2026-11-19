@@ -102,7 +102,8 @@ bash -n scripts/stig-view.sh
 | --- | --- |
 | `VPN/<rule-id>/srg.txt` | Shared source baseline for a rule. |
 | `VPN/<product>/<rule-id>/*.txt` | Product implementation, check, and evidence fields. |
-| `configs/cli/iosxe-ikev2-ipsec` | Example IOS-XE site-to-site IPsec configuration with placeholders. |
+| `configs/cli/iosxe-ikev2-ipsec-psk.cisco` | IOS-XE site-to-site IKEv2/IPsec template with pre-shared-key authentication. |
+| `configs/cli/iosxe-ikev2-ipsec-x509.cisco` | Alternative template with X.509/ECDSA peer authentication and certificate allowlisting; OCSP first, CRL fallback. |
 | `scripts/stig-view.sh` | Read-only viewer for a shared baseline and product files. |
 | `scripts/x2stighub.py` | Imports XCCDF XML or Excel SRG content into the repository layout. |
 | `scripts/extract_srg.py` | Safely extracts the SRG ZIP archive into a source directory. |
@@ -111,6 +112,11 @@ bash -n scripts/stig-view.sh
 | `scripts/README.md` | More detailed script usage and verification notes. |
 | `srgs/` | Local extracted source bundle, when available. |
 | `zips/` | Local source ZIP archive, when available. |
+
+Choose one VPN authentication template, not both. Both retain the same
+IPsec/VTI and WAN-filtering configuration. X.509 is not required by
+SRG-NET-000140-VPN-000500 in the assessed deployment: its non-privileged
+account scope remains not applicable with either peer-authentication method.
 
 The layout supports a shared baseline with one or more product-specific
 interpretations. For XML imports, the importer populates the shared

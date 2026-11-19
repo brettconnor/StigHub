@@ -1,6 +1,8 @@
 # WAN ingress filtering references
 
-Accessed 2026-11-04 for `configs/cli/iosxe-ikev2-ipsec`.
+Accessed 2026-11-04 for the golden VPN template. The shared WAN policy is
+now retained in both `configs/cli/iosxe-ikev2-ipsec-psk.cisco` and
+`configs/cli/iosxe-ikev2-ipsec-x509.cisco`.
 
 ## Cisco primary documentation
 

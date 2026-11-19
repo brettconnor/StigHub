@@ -1,0 +1,1 @@
+Cisco IOS-XE crypto session up and down messages identify the VPN peer address. The informational log buffer records these messages, identifying the peer associated with the VPN session event.

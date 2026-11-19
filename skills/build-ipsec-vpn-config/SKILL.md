@@ -7,14 +7,23 @@ description: Create, review, and document Cisco IOS XE site-to-site IKEv2/IPsec 
 
 Use this skill when creating, reviewing, cleaning up, or documenting Cisco
 IOS XE site-to-site IPsec VPN configurations, especially IKEv2 route-based
-virtual tunnel interfaces (VTIs), IPv4/IPv6 peers, or the canonical template
-at `configs/cli/iosxe-ikev2-ipsec`.
+virtual tunnel interfaces (VTIs), IPv4/IPv6 peers, or the canonical templates
+at `configs/cli/iosxe-ikev2-ipsec-psk.cisco` and
+`configs/cli/iosxe-ikev2-ipsec-x509.cisco`.
 
 ## Repository source of truth
 
-- Treat `configs/cli/iosxe-ikev2-ipsec` as the repository's canonical golden
-  configuration template. Keep it readable, consistently indented, and
-  placeholder-only. Do not silently diverge product answers from it.
+- Treat `configs/cli/iosxe-ikev2-ipsec-psk.cisco` and
+  `configs/cli/iosxe-ikev2-ipsec-x509.cisco` as mutually exclusive golden
+  authentication variants. Select the variant for the established deployment;
+  previously authored PSK fixes remain based on the PSK variant. Keep both
+  readable, consistently indented, and placeholder-only, with their common
+  IPsec/VTI and WAN policy aligned. Do not silently diverge product answers
+  from the selected variant.
+- X.509 authenticates router peers, not individual users. It is not required
+  to make SRG-NET-000140-VPN-000500 not applicable in the established
+  deployment with no VPN user accounts or non-privileged network-access
+  accounts. Do not convert that applicability decision into an X.509 mandate.
 - Use `VPN/Cisco-IOS-XE/<rule-id>/*.txt` for product-specific SRG answers.
   Distinguish what the template actually configures from what still needs
   deployment-specific implementation or verification.

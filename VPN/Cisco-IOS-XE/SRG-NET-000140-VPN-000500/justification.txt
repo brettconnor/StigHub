@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router provides site-to-site, router-to-router IPsec connectivity and has no VPN user accounts or network access to non-privileged management accounts. X.509 authentication identifies the peer routers rather than non-privileged account users; this requirement is therefore not applicable to the assessed deployment.
