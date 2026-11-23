@@ -1,0 +1,6 @@
+crypto ikev2 profile IKE2-PROFILE
+ dpd 30 6 periodic
+!
+crypto ikev2 profile IKE2-PROFILE6
+ dpd 30 6 periodic
+!

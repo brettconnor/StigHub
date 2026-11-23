@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must use anti-replay mechanisms for security associations.

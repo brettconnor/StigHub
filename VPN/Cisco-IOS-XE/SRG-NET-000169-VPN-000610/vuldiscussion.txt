@@ -1,0 +1,3 @@
+Lack of authentication and identification enables non-organizational users to gain access to the network or possibly a VPN gateway that provides opportunity for intruders to compromise resources within the network infrastructure.
+
+This requirement only applies to components where this is specific to the function of the device or has the concept of a non-organizational user.

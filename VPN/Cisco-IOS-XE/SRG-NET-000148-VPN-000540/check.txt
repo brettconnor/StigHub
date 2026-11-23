@@ -1,0 +1,2 @@
+show running-config | section ^crypto ikev2 keyring IKE2-KEYRING$
+show running-config | section ^crypto ikev2 profile IKE2-PROFILE

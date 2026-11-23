@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must be configured to route sessions to an IDPS for inspection.

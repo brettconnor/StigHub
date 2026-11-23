@@ -10,8 +10,27 @@ testing, stock availability, or a fielding approval.
 
 - [IKEv2 Packet Exchange and Protocol-Level Debugging](./IKEv2-packet-exchange.md)
   — Cisco's IKEv1/IKEv2 exchange comparison and terminology.
+- [IOS-XE IKEv2 session termination](./iosxe-ikev2-session-termination.md)
+  — periodic DPD for site-to-site peer sessions, Child-SA teardown, and
+  the distinction from forwarded inner TCP connections.
 - [IOS-XE VPN router service inventory — draft](./iosxe-service-inventory-matrix.md)
   — proposed service review matrix, evidence and unresolved platform coverage.
+- [IOS-XE IPsec anti-replay](./iosxe-ipsec-anti-replay.md)
+  — Cisco-documented ESP sequence-number replay protection, default window,
+  configuration and active-SA verification.
+- [IOS-XE IKEv2/IPsec PKI path validation](./iosxe-pki-path-validation.md)
+  — certificate-chain validation, trust anchors, revocation status, and
+  conditional scope for SRG-NET-000164-VPN-000560.
+- [IOS-XE PKI private-key management](./iosxe-pki-private-key-management.md)
+  — Cisco key-generation/exportability guidance and the evidence needed to
+  assess SRG-NET-000165-VPN-000570.
+- [IOS-XE FIPS evidence for VPN private-key management](./c8kv-fips-key-management.md)
+  — Cisco compliance letters (with C8KV examples), NIST module
+  status/caveats, and the configuration/evidence basis for
+  SRG-NET-000165-VPN-000570.
+- [IOS-XE VPN-to-IDPS routing](./iosxe-vpn-idps-routing.md)
+  — VTI post-decryption routing, static routes for protected prefixes, and
+  the PBR alternative for all ingress traffic.
 
 ## Product IDs
 

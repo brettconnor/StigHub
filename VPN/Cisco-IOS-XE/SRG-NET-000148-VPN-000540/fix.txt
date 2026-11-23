@@ -1,0 +1,24 @@
+! Use unique peer secrets provisioned outside this file. Never commit
+! operational pre-shared keys to source control.
+crypto ikev2 keyring IKE2-KEYRING
+ peer <IPSEC-PEER-NAME>
+  address <IPSEC-PEER-IP>
+  pre-shared-key local <IPSEC-LOCAL-PSK>
+  pre-shared-key remote <IPSEC-PEER-PSK>
+ peer <IPSEC-IP6-PEER-NAME>
+  address <IPSEC-PEER-IP6>/<IP6-PREFIX>
+  pre-shared-key local <IPSEC-LOCAL-PSK6>
+  pre-shared-key remote <IPSEC-PEER-PSK6>
+!
+crypto ikev2 profile IKE2-PROFILE
+ match identity remote address <IPSEC-PEER-IP> <IPSEC-PEER-MASK>
+ authentication remote pre-share
+ authentication local pre-share
+ keyring local IKE2-KEYRING
+!
+crypto ikev2 profile IKE2-PROFILE6
+ match identity remote address <IPSEC-PEER-IP6>/<IP6-PREFIX>
+ authentication remote pre-share
+ authentication local pre-share
+ keyring local IKE2-KEYRING
+!

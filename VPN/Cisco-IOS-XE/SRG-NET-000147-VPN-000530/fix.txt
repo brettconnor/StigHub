@@ -1,0 +1,1 @@
+crypto ipsec security-association replay window-size 64

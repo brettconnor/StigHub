@@ -1,0 +1,1 @@
+The explicit 64-packet IPsec anti-replay window causes each inbound ESP security association to track received sequence numbers and reject duplicate or stale packets. The setting applies globally to the router's IPsec security associations.

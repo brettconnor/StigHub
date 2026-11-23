@@ -1,0 +1,15 @@
+show version
+show running-config | include ^username <LOCAL-ADMIN> privilege 15$
+show running-config | section ^aaa
+show running-config | section ^line console 0
+show running-config | section ^line vty
+show crypto key mypubkey ec VPN-IDENTITY-KEY
+show running-config | section ^crypto pki trustpoint VPN-TP$
+show running-config | section ^crypto pki certificate map VPN-PEER4
+show running-config | section ^crypto pki certificate map VPN-PEER6
+show running-config | section ^crypto ikev2 profile IKE2-PROFILE$
+show running-config | section ^crypto ikev2 profile IKE2-PROFILE6$
+show running-config | section ^crypto ipsec profile TNL_Profile$
+show running-config | section ^crypto ipsec profile TNL_Profile6$
+show running-config interface Tunnel <TUN-INT>
+show running-config interface Tunnel <TUN-INT6>

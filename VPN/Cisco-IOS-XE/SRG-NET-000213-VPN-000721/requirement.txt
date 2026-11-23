@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must terminate remote access network connections after an organization-defined time period.

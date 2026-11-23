@@ -1,0 +1,1 @@
+The site-to-site VPN on the Cisco IOS-XE VPN router, when using PKI-based authentication for devices, must enforce authorized access to the corresponding private key.

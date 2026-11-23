@@ -1,0 +1,2 @@
+show running-config | include ^crypto ipsec security-association replay
+show crypto ipsec sa

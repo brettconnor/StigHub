@@ -102,8 +102,9 @@ bash -n scripts/stig-view.sh
 | --- | --- |
 | `VPN/<rule-id>/srg.txt` | Shared source baseline for a rule. |
 | `VPN/<product>/<rule-id>/*.txt` | Product implementation, check, and evidence fields. |
-| `configs/cli/iosxe-ikev2-ipsec-psk.cisco` | IOS-XE site-to-site IKEv2/IPsec template with pre-shared-key authentication. |
-| `configs/cli/iosxe-ikev2-ipsec-x509.cisco` | Alternative template with X.509/ECDSA peer authentication and certificate allowlisting; OCSP first, CRL fallback. |
+| `configs/cli/iosxe-ikev2-ipsec-psk.cisco` | IOS-XE site-to-site IKEv2/IPsec template with pre-shared-key authentication and periodic DPD on both address-family profiles. |
+| `configs/cli/iosxe-ikev2-ipsec-x509.cisco` | Alternative template with X.509/ECDSA peer authentication, certificate allowlisting, and periodic DPD on both address-family profiles; OCSP first, CRL fallback. |
+| `configs/cli/iosxe-idps-routing.cisco` | Supplemental IPv4/IPv6 static routes for VPN-protected prefixes through a routed IDS/IPS. |
 | `scripts/stig-view.sh` | Read-only viewer for a shared baseline and product files. |
 | `scripts/x2stighub.py` | Imports XCCDF XML or Excel SRG content into the repository layout. |
 | `scripts/extract_srg.py` | Safely extracts the SRG ZIP archive into a source directory. |

@@ -1,0 +1,3 @@
+Without cryptographic integrity protections, information can be altered by unauthorized users without detection.
+
+Although allowed by SP800-131Ar2 for some applications, SHA-1 is considered a compromised hashing standard and is being phased out of use by industry and Government standards. Unless required for legacy use, DoD systems should not be configured to use SHA-2 for integrity of remote access sessions.

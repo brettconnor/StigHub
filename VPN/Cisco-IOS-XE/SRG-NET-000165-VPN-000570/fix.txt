@@ -1,0 +1,58 @@
+username <LOCAL-ADMIN> privilege 15
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+!
+line console 0
+ login authentication default
+!
+line vty 0 <LAST-VTY>
+ login authentication default
+ transport input none
+!
+crypto key generate ec keysize 256 label VPN-IDENTITY-KEY
+!
+crypto pki trustpoint VPN-TP
+ enrollment terminal pem
+ subject-name <LOCAL-ROUTER-SUBJECT-DN>
+ revocation-check ocsp crl
+ eckeypair VPN-IDENTITY-KEY
+ hash sha256
+!
+crypto pki certificate map VPN-PEER4 10
+ subject-name eq <IPSEC-PEER-SUBJECT-DN>
+ issuer-name eq <IPSEC-PEER-ISSUER-DN>
+!
+crypto pki certificate map VPN-PEER6 10
+ subject-name eq <IPSEC-PEER6-SUBJECT-DN>
+ issuer-name eq <IPSEC-PEER6-ISSUER-DN>
+!
+crypto ikev2 profile IKE2-PROFILE
+ match address local <WAN-IP>
+ match certificate VPN-PEER4
+ identity local dn
+ authentication remote ecdsa-sig
+ authentication local ecdsa-sig
+ pki trustpoint VPN-TP
+!
+crypto ikev2 profile IKE2-PROFILE6
+ match address local <WAN-IP6>
+ match certificate VPN-PEER6
+ identity local dn
+ authentication remote ecdsa-sig
+ authentication local ecdsa-sig
+ pki trustpoint VPN-TP
+!
+crypto ipsec profile TNL_Profile
+ set transform-set TSET_Tunnel
+ set ikev2-profile IKE2-PROFILE
+!
+crypto ipsec profile TNL_Profile6
+ set transform-set TSET_Tunnel
+ set ikev2-profile IKE2-PROFILE6
+!
+interface Tunnel <TUN-INT>
+ tunnel protection ipsec profile TNL_Profile
+!
+interface Tunnel <TUN-INT6>
+ tunnel protection ipsec profile TNL_Profile6

@@ -36,12 +36,14 @@ crypto ikev2 profile IKE2-PROFILE
  authentication remote pre-share
  authentication local pre-share
  keyring local IKE2-KEYRING
+ dpd 30 6 periodic
 !
 crypto ikev2 profile IKE2-PROFILE6
  match identity remote address <IPSEC-PEER-IP6>/<IP6-PREFIX>
  authentication remote pre-share
  authentication local pre-share
  keyring local IKE2-KEYRING
+ dpd 30 6 periodic
 !
 ! AES-GCM is an AEAD transform and does not use a separate ESP HMAC.
 crypto ipsec transform-set TSET_Tunnel esp-gcm 256

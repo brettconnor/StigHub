@@ -1,0 +1,1 @@
+The assessed Cisco IOS-XE VPN router provides site-to-site IPsec connectivity only and does not provide remote-access VPN sessions for individual users. Therefore, this remote-access connection-termination requirement is not applicable.

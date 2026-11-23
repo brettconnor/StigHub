@@ -1,0 +1,3 @@
+show running-config | section ^crypto ikev2 profile
+show crypto ikev2 session detail
+show crypto ipsec sa

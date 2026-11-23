@@ -1,0 +1,1 @@
+Periodic DPD on both IKEv2 profiles sends peer-liveness probes independently of data traffic. When a peer fails to answer the configured retries, IOS XE clears the IKEv2 session and its associated IPsec/ESP security associations, terminating the site-to-site VPN session.

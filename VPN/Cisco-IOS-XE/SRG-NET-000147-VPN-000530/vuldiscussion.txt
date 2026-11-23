@@ -1,0 +1,1 @@
+Anti-replay is an IPsec security mechanism at a packet level, which helps to avoid unwanted users from intercepting and modifying an ESP packet.

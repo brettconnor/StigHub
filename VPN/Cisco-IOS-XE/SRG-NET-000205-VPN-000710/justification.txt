@@ -1,0 +1,1 @@
+The IPv4 and IPv6 routes direct VPN sessions for each protected destination prefix to the routed IDS/IPS next hop after decryption. These more-specific routes send the traffic through inspection before it reaches the protected networks, taking precedence over the full-tunnel defaults.

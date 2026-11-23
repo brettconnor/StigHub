@@ -1,0 +1,24 @@
+crypto ikev2 proposal IKE2-PROP
+ encryption aes-gcm-256
+ prf sha256
+ group 19
+!
+crypto ikev2 policy IKE2-POLICY
+ proposal IKE2-PROP
+!
+crypto ipsec transform-set TSET_Tunnel esp-gcm 256
+ mode tunnel
+!
+crypto ipsec profile TNL_Profile
+ set transform-set TSET_Tunnel
+ set ikev2-profile IKE2-PROFILE
+!
+crypto ipsec profile TNL_Profile6
+ set transform-set TSET_Tunnel
+ set ikev2-profile IKE2-PROFILE6
+!
+interface Tunnel <TUN-INT>
+ tunnel protection ipsec profile TNL_Profile
+!
+interface Tunnel <TUN-INT6>
+ tunnel protection ipsec profile TNL_Profile6

@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must map the authenticated identity to the user account for PKI-based authentication.

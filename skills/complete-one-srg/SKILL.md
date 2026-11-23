@@ -89,6 +89,17 @@ are covered separately. The operator accepts identification of the VPN peer
 in crypto session logs for this scope. Verify the relevant event records on
 the target device rather than inferring them from IKEv2 authentication alone.
 
+For `SRG-NET-000148-VPN-000540`, the operator limits this SRG to the
+site-to-site VPN connection and its remote VPN gateway peer. IKEv2/IPsec is
+the only approved application for remote connections. Downstream routers,
+switches, and firewalls are assessed under their own scoped SRGs; do not
+expand this control to individual hosts behind the peer gateway. Use the
+PSK variant's peer-specific IKEv2 keyring and profile mappings with a
+different secret per peer and exact peer-address matching, or the X.509
+variant's per-peer identity/issuer certificate maps. X.509 is not mandatory.
+The authentication must identify and authenticate the remote VPN gateway
+before the IKE/IPsec connection is established.
+
 The operator has designated `SRG-NET-000019-VPN-002435` as fully outside
 the assessed product's scope because TLS VPN is unsupported in this
 site-to-site IOS-XE VPN router project. Complete Steps 1-3 for out-of-scope
@@ -104,6 +115,19 @@ connect it directly to the applicability decision; omit unrelated caveats
 and gap analyses. This applicability rationale is the exception to Step 6's
 configuration-focused wording. Step 7 writes exactly `Not Applicable`
 followed by a newline to `status.txt`.
+
+For `SRG-NET-000165-VPN-000570`, assess private-key management when PKI-based
+device authentication is used; do not make X.509 mandatory for PSK. For
+VPN-capable IOS-XE routers on approved releases, use the matching
+family/release Cisco compliance letter and NIST CMVP #5356/#5430 as FIPS
+module evidence (see `referenes/c8kv-fips-key-management.md`; C8KV letters
+are examples, not universal proof). Use the X.509 variant's locally
+generated P-256 EC key without the `exportable` option, bind it to the
+trustpoint, and verify the exact platform/release, approved mode, key curve,
+and non-exportability. `Met` requires matching approved-release evidence;
+account for NIST #5356's generated-key-strength caveat and do not treat
+historical #4752 as current validation. Authored status is not live-device
+evidence.
 
 ## Policy selection
 

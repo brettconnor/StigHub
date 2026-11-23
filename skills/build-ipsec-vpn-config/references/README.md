@@ -19,3 +19,5 @@ platform or release.
   remote-management disablement sources.
 - [Session limits](session-limits.md) — per-user SSH session control and
   the distinction between recipe values and SSP-defined policy.
+- [IPsec anti-replay](anti-replay.md) — ESP anti-replay behavior, explicit
+  receive-window configuration, and operational verification.

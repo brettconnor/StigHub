@@ -1,0 +1,4 @@
+show running-config | include ^ip route
+show running-config | include ^ipv6 route
+show ip route <PROTECTED_IPV4_PREFIX>
+show ipv6 route <PROTECTED_IPV6_PREFIX>/<PREFIX_LENGTH>

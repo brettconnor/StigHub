@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must use FIPS-validated SHA-2 or higher hash function to protect the integrity of hash message authentication code (HMAC), Key Derivation Functions (KDFs), Random Bit Generation, hash-only applications, and digital signature verification.

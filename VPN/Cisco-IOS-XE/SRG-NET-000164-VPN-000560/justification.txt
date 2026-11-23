@@ -1,0 +1,1 @@
+For the optional X.509 variant, the IKEv2 profiles select the VPN-TP trustpoint for mutual ECDSA peer authentication. With the approved CA chain provisioned as trust anchors, IOS-XE validates the peer certificate path; the trustpoint's OCSP-first, CRL-fallback revocation checks provide the required certificate status information.

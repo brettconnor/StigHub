@@ -1,0 +1,4 @@
+! Supplemental routes for decrypted traffic through a routed IDS/IPS.
+! Add one route per protected destination prefix.
+ip route <PROTECTED_IPV4_PREFIX> <MASK> <IDS_IPS_IPV4_NEXT_HOP>
+ipv6 route <PROTECTED_IPV6_PREFIX>/<PREFIX_LENGTH> <IDS_IPS_IPV6_NEXT_HOP>
