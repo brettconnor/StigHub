@@ -1,0 +1,1 @@
+The Cisco IOS-XE VPN router must use FIPS 140-2 compliant mechanisms for authentication to a cryptographic module.

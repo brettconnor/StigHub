@@ -1,6 +1,7 @@
 # IOS-XE FIPS evidence for VPN private-key management
 
-Reviewed **23 November 2026** for SRG-NET-000165-VPN-000570.
+Reviewed **23 November 2026** for SRG-NET-000165-VPN-000570 and
+SRG-NET-000230-VPN-000770.
 
 The operator states that VPN-capable Cisco IOS-XE router families have
 family/release-specific compliance letters identifying the same applicable
@@ -55,6 +56,23 @@ letter's historical #4752 citation as current assurance without a current
 Cisco-to-CMVP mapping for the exact platform and release. The NIST caveat
 about generated SSP strength makes explicit P-256 key configuration and
 device verification material.
+
+## SRG-NET-000230-VPN-000770 application
+
+For the IOS-XE VPN router, defer to NIST CMVP validation of the cryptographic
+modules, using the matching Cisco family/release compliance letter to map
+the product and IPsec service to the validated modules. The site-to-site PSK
+template uses AES-GCM-256, a SHA-256 IKEv2 PRF, group 19, and peer-specific
+IKEv2 pre-shared-key authentication, with the IKEv2 profiles bound to the
+AES-GCM IPsec transform. These are the approved cryptographic services used
+by the router's validated modules for the VPN.
+
+This assessment pattern treats the control as `Met` for the supported
+platform/release combinations covered by the matching Cisco letter and
+NIST's approved-mode CMVP validation. `show version` and the targeted
+configuration checks in the product record identify the device software and
+configured mechanisms; they are not substitutes for the matching product
+letter or proof of the live device's operating state.
 
 Sources:
 

@@ -1,0 +1,9 @@
+show version
+show running-config | section ^crypto ikev2 proposal IKE2-PROP
+show running-config | section ^crypto ikev2 policy IKE2-POLICY
+show running-config | include ^crypto ikev2 keyring IKE2-KEYRING|^ peer <IPSEC-PEER-NAME>$|^  address <IPSEC-PEER-IP>$|^ peer <IPSEC-IP6-PEER-NAME>$|^  address <IPSEC-PEER-IP6>/
+show running-config | section ^crypto ikev2 profile IKE2-PROFILE$
+show running-config | section ^crypto ikev2 profile IKE2-PROFILE6$
+show running-config | section ^crypto ipsec transform-set TSET_Tunnel
+show running-config | section ^crypto ipsec profile TNL_Profile$
+show running-config | section ^crypto ipsec profile TNL_Profile6$

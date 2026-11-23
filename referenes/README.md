@@ -27,7 +27,7 @@ testing, stock availability, or a fielding approval.
 - [IOS-XE FIPS evidence for VPN private-key management](./c8kv-fips-key-management.md)
   — Cisco compliance letters (with C8KV examples), NIST module
   status/caveats, and the configuration/evidence basis for
-  SRG-NET-000165-VPN-000570.
+  SRG-NET-000165-VPN-000570 and SRG-NET-000230-VPN-000770.
 - [IOS-XE VPN-to-IDPS routing](./iosxe-vpn-idps-routing.md)
   — VTI post-decryption routing, static routes for protected prefixes, and
   the PBR alternative for all ingress traffic.
